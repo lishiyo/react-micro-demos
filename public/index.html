@@ -3,14 +3,46 @@
   <head>
     <title>Hello React</title>
     <!-- Not present in the tutorial. Just for basic styling. -->
-    <link rel="stylesheet" href="css/base.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
+    <!-- <link rel="stylesheet" href="css/base.css" /> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    -->
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
+    <link rel="stylesheet" type="text/css" href="css/gooey-base.css" />
+    <link rel="stylesheet" type="text/css" href="css/gooey-select.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+   
   </head>
   <body>
+    <h1> Gooey Demo</h1>
     <div id="content"></div>
-    <script type="text/jsx;harmony=true" src="scripts/example.js"></script>
+    <!-- 03-GOOEY -->
+    <div class="container">
+      <div class="content">
+        <div id="gooey-grid-container" class="select-container"></div>
+      </div>
+
+      <!--- gooey highlight effect -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -6" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop" result="goo"/>
+          </filter>
+        </defs>
+      </svg>
+      
+    </div><!-- /container -->
+
+    <!-- <script type="text/jsx;harmony=true" src="dist/bundle.js"></script> -->
+    <script src="vendor/TweenMax.min.js"></script>
+    <script src="dist/build.js"></script>
   </body>
 </html>
